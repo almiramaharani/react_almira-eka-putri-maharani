@@ -1,1 +1,1 @@
-<h1>This is for feature2 branch</h1>
+<h2>This is for feature2 branch</h2>
