@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Create Product Form</title>
+    </head>
+    <body>
+        <h1>Create Product</h1>
+        <h2>Detail Product</h2>
+        <form method="submit" required>
+            <div>
+                <label for="name">Product name:</label><br>
+                <input type="text" id="fname" name="fname" required><br>    
+            </div>
+            <br>
+            <div>
+                <label for="category">Product Category:</label><br>
+                <select id="category" required>
+                    <option value="fashion">Fashion</option>
+                    <option value="book">Book</option>
+                    <option value="electronic">Electronic</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <label for="">Product Freshness</label><br>
+                <input type="radio" id="brand-new" name="freshness" value="brand-new" required>
+                    <label for="brand-new">Brand New</label><br>
+                <input type="radio" id="second-hank" name="freshness" value="second-hank" required>
+                    <label for="second-hank">Second Hank</label><br>
+                <input type="radio" id="refurbished" name="freshness" value="refurbished" required>
+                    <label for="refurbished">Refurbished</label><br>
+            </div>
+            <br>
+            <form action="upload.php" method="post" enctype="multipart/form-data">
+                <label for="file-upload">Image of Product</label>
+                <input type="file" id="file-upload" name="uploaded-file" accept=".jpeg, .jpg, .png">
+            </form>
+            <br>
+            <div>
+                <label for="additional">Additional Description</label><br>
+                <textarea name="additional" id="additional" cols="40" rows="10"></textarea>
+            </div>
+            <div>
+                <label for="price">Product price:</label><br>
+                <input id="price" name="productPrice" placeholder="$ 100" type="number">
+            </div>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>
