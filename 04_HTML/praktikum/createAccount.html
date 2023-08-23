@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Create Account</title>
+    </head>
+    <body>
+        <h1>Create Account</h1>
+        <h2>Detail Form</h2>
+        <form>
+            <label for="fname">First name :</label><br>
+            <input type="text" id="fname" name="first-name" required><br>
+
+            <label for="lname">Last name :</label><br>
+            <input type="text" id="lname" name="last-name" required><br>
+
+            <label for="uname">Username :</label><br>
+            <input type="text" id="uname" name="username" required><br>
+
+            <label for="email">Email :</label><br>
+            <input type="text" id="email" name="email" required><br>
+
+            <div>
+                <label for="">Gender</label><br>
+                <input type="radio" id="male" name="male" value="male" required>
+                    <label for="male">Male</label><br>
+                <input type="radio" id="female" name="female" value="female" required>
+                    <label for="female">Female</label><br>
+                <input type="radio" id="other" name="other" value="other" required>
+                    <label for="other">Other</label>
+            </div>
+
+            <label for="address">Address</label><br>
+            <input type="text" id="address" name="address" required><br>
+
+            <label for="address2">Address 2</label><br>
+            <input type="text" id="address2" name="address2" required><br>
+
+            <div>
+                <label for="nationality">Nationality :</label><br>
+                <p style="font-size: 90%;">Nationality</p>
+                <select id="nationality">
+                    <option value="" disabled selected></option>
+                    <option value="indonesia">Indonesia</option>
+                    <option value="malaysia">Malaysia</option>
+                </select>
+            </div>
+            
+            <label for="language">Language Spoken :</label><br>
+            <input type="checkbox" id="indo" name="indo">
+            <label for="indo">Bahasa Indonesia</label><br>
+            <input type="checkbox" id="eng" name="eng">
+            <label for="eng">English</label><br>
+            <input type="checkbox" id="other" name="other">
+            <label for="other">Other</label><br>
+        </form>
+        <br>
+        <button type="submit">Create Account</button>
+    </body>
+</html>
