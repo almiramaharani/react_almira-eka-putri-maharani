@@ -32,8 +32,6 @@ body {
 
 .btn-container {
     display: flex;
-    justify-content: left;
-    flex-direction: row;
     align-items: center;
     margin-top: 30px;
 }
@@ -62,7 +60,7 @@ body {
     justify-content: left;
 }
 
-.column {
+.col-body {
     flex: 1;
     padding: 20px;
 }
@@ -103,10 +101,12 @@ body {
     background-color: #37517E;
 }
 
-.row-footer {
+.container-footer {
+    min-height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 70px;
 }
 
 .input-text {
@@ -116,7 +116,6 @@ body {
     border-radius: 20px 0 0 20px;
     width: 80%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
 }
 
 .link-vid {
@@ -129,7 +128,6 @@ body {
 
     text-decoration: none;
     color: white;
-    margin-left: 50px;
 }
 
 .links {
@@ -155,6 +153,7 @@ body {
     border-radius: 40px;
     border-color: none;
     cursor: pointer;
+    margin-right: 50px;
 
     font-family: 'Jost*', sans-serif;
     font-size: 16px;
@@ -275,4 +274,90 @@ body {
     letter-spacing: 0em;
     text-align: left;
     color: #444444;
+}
+
+#address {
+    margin: auto;
+    color: #5E5E5E;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .col-body, .column-img {
+        padding: 20px;
+    }
+
+    .btn-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .btn-start{
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .newsletter-container {
+        padding: 10px 0;
+    }
+
+    .input-text {
+        border-radius: 20px;
+    }
+
+    .company-container {
+        flex-direction: column;
+        text-align: left;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    .column-footer {
+        padding: 0;
+        margin: 0;
+        text-align: left;
+    }
+
+    .input-container {
+        flex-direction: column;
+        align-items: center;
+        min-width: auto;
+    }
+
+    .subs-button {
+        border-radius: 20px;
+        margin-top: 10px;
+    }
+
+    .container-footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .col-title-footer {
+        margin-top: 10px;
+    }
+
+    .link-vid {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 16px;
+        letter-spacing: 0em;
+        text-align: left;
+    
+        text-decoration: none;
+        color: white;
+        margin-top: 10px;
+    }
 }
