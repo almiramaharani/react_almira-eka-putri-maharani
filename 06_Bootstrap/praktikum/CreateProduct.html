@@ -53,20 +53,29 @@
         <div class="form-acc-container">
             <p id="detail-form-title">Detail Product</p>
             <!-- Form Create Product -->
-            <form>
+            <form class="needs-validation was-validated" novalidate>
               <div class="col">
-                  <label for="productName" class="form-label">Product name</label>
-                  <input type="text" class="form-control" id="productName" required>
+                <label for="productName" class="form-label">Product name</label>
+                <input type="text" class="form-control" id="productName" required>
+                <div class="valid-feedback">
+                  Product name is valid!
+                </div>
+                <div class="invalid-feedback">
+                  Please enter the product name.
+                </div>              
               </div>
               <div class="col pt-3">
                   <label for="category" class="form-label">Product Category</label>
                   <div class="input-group mb-3">
                       <select class="form-select" id="category" required>
-                          <option selected>Choose...</option>
+                          <option selected disabled value="">Choose...</option>
                           <option value="electronic">Electronic</option>
                           <option value="fashion">Fashion</option>
                           <option value="food">Food</option>
                       </select>
+                      <div class="invalid-feedback">
+                        Please select the product category.
+                      </div> 
                   </div>
                 </div>
                 <div class="col">
@@ -74,36 +83,54 @@
                     <div class="input-group mb-3">
                         <input type="file" class="form-control" id="image" style="color: #0D6EFD;" required>
                     </div>
+                    <div class="valid-feedback">
+                      The image of product is valid!
+                    </div>
+                    <div class="invalid-feedback">
+                      Please enter the image of product.
+                    </div> 
                 </div>
 
                 <div class="col pb-3">
                     <label for="productFreshness" class="form-label">Product Freshness</label>
                     <div class="form-check" >
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="brandNew" required>
+                        <input class="form-check-input" type="radio" name="productFreshnessRadio" id="brandNew" required>
                         <label class="form-check-label" for="brandNew">
                           Brand New
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="second" required>
+                        <input class="form-check-input" type="radio" name="productFreshnessRadio" id="second" required>
                         <label class="form-check-label" for="second">
                           Second Hand
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="refufbished" required>
+                        <input class="form-check-input" type="radio" name="productFreshnessRadio" id="refufbished" required>
                         <label class="form-check-label" for="refufbished">
                             Refufbished
                         </label>
+                        <div class="invalid-feedback">
+                          Please select the product freshness.
+                        </div> 
                     </div>
                 </div>
                 <div class="col">
                     <label for="add-desc" class="form-label">Additional Description</label>
                     <textarea class="form-control" id="add-desc" required></textarea>
+                    <div class="invalid-feedback">
+                      Please enter the additional description.
+                    </div> 
                 </div>
                 <div class="col pt-3">
                     <label for="price" class="form-label">Product Price</label>
                     <input type="number" class="form-control" id="price" placeholder="$ 1" required>
+                    <div class="valid-feedback">
+                      Product price is valid!
+                    </div>
+                    <div class="invalid-feedback">
+                      Please enter the product price.
+                    </div> 
                 </div>
                 <button type="submit" class="btn btn-primary btn-block mt-3" id="submit-btn">Submit</button>
             </form>
