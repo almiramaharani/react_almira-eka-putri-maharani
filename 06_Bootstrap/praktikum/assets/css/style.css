@@ -71,6 +71,11 @@ body {
     text-align: center;
 }
 
+.car2-img {
+    flex: 1;
+    text-align: center;
+}
+
 .column-img img {
     max-width: 100%;
     height: auto;

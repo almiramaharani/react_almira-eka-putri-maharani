@@ -45,21 +45,55 @@
         </nav>
 
         <!-- main -->
-        <div class="bg-container">
-            <dic class="container">
-                <div class="col-body">
-                    <h1 id="title">Better Solutions For Your<br>Business</h1>
-                    <p id="desc">We are team talented designers making websites with<br>Bootstrap</p>
-                    <div class="btn-container">
-                        <button class="btn-start">Get Started</button>
-                        <a href="#" class="link-vid">Watch Video</a>
+        <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="bg-container">
+                    <div class="container">
+                        <div class="col-body">
+                            <h1 id="title">Better Solutions For Your<br>Business</h1>
+                            <p id="desc">We are team talented designers making websites with<br>Bootstrap</p>
+                            <div class="btn-container">
+                                <button class="btn-start">Get Started</button>
+                                <a href="#" class="link-vid">Watch Video</a>
+                            </div>
+                        </div>
+                        <div class="column-img">
+                            <img src="./assets/img/hero-img.png" alt="Hero Image">
+                        </div>
+                    </div>
+                </div> 
+              </div>
+              <div class="carousel-item">
+                <div style="background-color: rgb(16 25 40); padding: 100px 0;">
+                    <dic class="container">
+                        <div class="col-body">
+                            <h1 id="title">Grow Your Business with Us!</h1>
+                            <p id="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                            <div class="btn-container">
+                                <button class="btn-start">Get In Touch</button>
+                            </div>
+                        </div>
+                        <div class="car2-img">
+                            <img src="./assets/img/business-man.png" alt="Business Man Image">
+                        </div>
                     </div>
                 </div>
-                <div class="column-img">
-                    <img src="./assets/img/hero-img.png" alt="Hero Image">
-                </div>
+              </div>
             </div>
-        </div> 
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
 
         <!-- footer -->
         <div class="footer">
