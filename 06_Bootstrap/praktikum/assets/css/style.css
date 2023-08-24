@@ -369,6 +369,7 @@ h2.page-title {
     flex-direction: column;
 }
 
+
 #detail-form-title {
     font-family: "Roboto", sans-serif;
     font-size: 23px;
@@ -420,6 +421,11 @@ button#submit-btn {
         margin-right: 0;
         margin-bottom: 10px;
     }
+
+    .btn-close{
+        margin-left: 0
+    }
+
 
     .newsletter-container {
         padding: 10px 0;

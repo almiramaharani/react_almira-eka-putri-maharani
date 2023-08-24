@@ -46,13 +46,19 @@
 
         <!-- main -->
         <section class="content-main">
-          <div class="text-center pt-5">
-            <img src="./assets/img/bootstrap-logo.svg.png"/>
-            <h1 class="page-title mt-3">Create Account</h1>
-            <p id="page-desc">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a <br/>validation state that can be triggered by attempting to submit the form without completing it.</p>
-          </div>
           <div class="form-acc-container">
+             <!-- Bootstrap Alert -->
+            <div id="error-alert" class="alert alert-danger" role="alert" style="display: none;">
+              <strong>Failed!</strong> Please correct the form errors before submitting.
+            </div>
+
+            <div class="text-center pt-5">
+              <img src="./assets/img/bootstrap-logo.svg.png" alt="Logo"/>
+              <h1 class="page-title mt-3">Create Account</h1>
+              <p id="page-desc">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+            </div>
             <p id="detail-form-title">Detail Form</p>
+
             <form class="needs-validation was-validated" novalidate>
               <div class="row mb-3">
                 <div class="col">
@@ -265,5 +271,17 @@
           </div>
         </div>
       </section>
+
+      <script>
+        document.querySelector("form").addEventListener("submit", function(event) {
+            if (!this.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+                document.getElementById("error-alert").style.display = "block";
+            }
+            
+            this.classList.add("was-validated");
+        });
+    </script>
     </body>
 </html>
