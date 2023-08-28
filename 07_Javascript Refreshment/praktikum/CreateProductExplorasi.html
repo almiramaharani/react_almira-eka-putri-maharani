@@ -81,19 +81,19 @@
                 <div class="col pb-3">
                     <label for="productFreshness" class="form-label">Product Freshness</label>
                     <div class="form-check" >
-                        <input class="form-check-input" type="radio" name="productFreshnessRadio" id="brandNew" required>
+                        <input class="form-check-input" type="radio" name="productFreshnessRadio" id="brandNew" value="Brand New" required>
                         <label class="form-check-label" for="brandNew">
                           Brand New
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="productFreshnessRadio" id="second" required>
+                        <input class="form-check-input" type="radio" name="productFreshnessRadio" id="second" value="Second Hand" required>
                         <label class="form-check-label" for="second">
                           Second Hand
                         </label>
                       </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="productFreshnessRadio" id="refufbished" required>
+                        <input class="form-check-input" type="radio" name="productFreshnessRadio" id="refufbished" value="Refufbished" required>
                         <label class="form-check-label" for="refufbished">
                             Refufbished
                         </label>
@@ -185,6 +185,9 @@
       <script>
         const productName = document.getElementById('productName');
         const productPrice = document.getElementById('price');
+        const productCategory = document.getElementById('category');
+        const productImage = document.getElementById('image');
+        const productFreshnessRadios = document.getElementsByName('productFreshnessRadio');
         const productDesc = document.getElementById('add-desc');
         const submitButton = document.getElementById('submit-btn');
         const productForm = document.getElementById('product-form');
@@ -235,6 +238,17 @@
         productForm.addEventListener('submit', function(event) {
           if (!updateButtonStatus()) {
             event.preventDefault();
+          } else {
+            const selectedFreshness = [...productFreshnessRadios].find(radio => radio.checked);
+
+            const formData = {
+              productName: productName.value,
+              productCategory: productCategory.value,
+              productFreshness: selectedFreshness.value,
+              productDesc: productDesc.value,
+              productPrice: parseFloat(productPrice.value)
+            };
+            alert(JSON.stringify(formData, null, 2));
           }
         })
       </script>
