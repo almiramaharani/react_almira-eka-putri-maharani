@@ -55,7 +55,7 @@
         <div class="form-acc-container">
             <p id="detail-form-title">Detail Product</p>
             <!-- Form Create Product -->
-            <form>
+            <form id="product-form">
               <div class="col">
                 <label for="productName" class="form-label">Product name</label>
                 <input type="text" class="form-control" id="productName" required>             
@@ -184,28 +184,66 @@
       
       <script>
         const productName = document.getElementById('productName');
-        const submitButton = document.getElementById('submit-btn');
         const productPrice = document.getElementById('price');
 
-        submitButton.addEventListener('click', function() {
+        const submitButton = document.getElementById('submit-btn');
+        
+
+        submitButton.addEventListener('click', function(event) {
+          const formFields = [
+            {element: document.getElementById('productName'), name: 'Product Name'},
+            {element: document.getElementById('category'), name: 'Product Category'},
+            {element: document.getElementById('image'), name: 'Product Image'},
+            {element: document.querySelector('input[name="productFreshnessRadio"]:checked'), name: 'Product Freshness'},
+            {element: document.getElementById('add-desc'), name: 'Product Desc'}
+          ]
+          let valid = true;
+          
+          // Validasi product name
           const nameValue = productName.value;
           const priceValue = parseFloat(productPrice.value);
-
-          // Validasi product name
-          if (nameValue.length > 25) {
+          if (valid == true && nameValue.length > 25) {
             alert('Product Name must not exceed 25 characters.');
-          } else if (nameValue === '') {
-            alert('Please enter a valid Prouct name.');
-          }
-          if (nameValue.includes('@') || nameValue.includes('/') || nameValue.includes('#') || nameValue.includes('{') || nameValue.includes('}')) {
+            valid = false;
+          } 
+
+          if (valid == true && nameValue.includes('@') || nameValue.includes('/') || nameValue.includes('#') || nameValue.includes('{') || nameValue.includes('}')) {
             alert('Name must not contain symbols.');
+            valid = false;
+          }
+
+          let emptyField = null;
+
+          for (const field of formFields) {
+            if (field.name === 'Product Freshness' && field.element == null) {
+              emptyField = field;
+              valid = false;
+              break;
+            } else {
+              const value = field.element.value.trim();
+              if (value === ''){
+                emptyField = field;
+                valid = false;
+                break;
+              }
+            }
+          }
+
+          if (emptyField) {
+            alert(`The ${emptyField.name} field must be filled in.`);
+            if (emptyField.element.name === 'Product Freshness') {
+              event.preventDefault();
+            }
+            emptyField.element.focus();
           }
 
           // Validasi product price
-          if (isNaN(priceValue) || priceValue <= 0){
+          if (valid == true && (isNaN(priceValue) || priceValue <= 0)){
             alert('Please enter a valid Product Price.');
+            valid = false;
           }
         });
       </script>
+    
     </body>
 </html>
