@@ -1,0 +1,133 @@
+.nav-btn {
+    transition: all 0.3s;
+    color: black;
+    text-decoration: none;
+}
+
+.nav-btn:hover {
+    font-weight: bold;
+    color: black;
+    border-color: black;
+    border-radius: 10%;
+}
+
+.btn-custom {
+    background-color: #E6CAF2;
+    color: black;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-custom:hover {
+    background-color: #7C77B0;
+    color: white;
+    border-color: #534f7e;
+}
+
+.bi {
+    transition: all 0.2s;
+}
+
+.bi:hover {
+    width: 30px;
+    height: 30px;
+}
+
+.contact-container-bg {
+    background-image: linear-gradient(white,#7C77B0);
+    padding: 4em 0;
+}
+
+.contact-desc {
+    width: 30%;
+}
+
+
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1em 6em;
+    background-color: #534f7e;
+}
+
+.custom-tooltip {
+    --bs-tooltip-bg: white;
+    --bs-tooltip-color: black;
+}
+
+
+img {
+    width: 40em;
+    height: 25em;
+}
+
+#address {
+    width: 50%;
+}
+#phone-number {
+    width: 50%;
+}
+
+@media (max-width: 768px) {
+    .tenor-gif-embed {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .greet-container {
+        text-align: center;
+    }
+    .header-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding-top: 3em;
+    }
+    .container-contact {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .contact-desc {
+        width: 80%;
+    }
+
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .web-container {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10%;
+    }
+    .location-container {
+        align-self: center;
+    }
+    .location-icon {
+        padding-top: 0px !important;
+    }
+
+    #address {
+        width: 100%;
+    }
+    #phone-number {
+        width: 100%;
+    }
+
+    img {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50%;
+        height: 30%;
+    }
+
+}
