@@ -18,6 +18,10 @@
     align-self: center;
 }
 
+.invalid-field {
+    border: 1px solid red;
+  }
+
 #submit-btn {
     width: 80% !important;
     margin: 0 auto;
