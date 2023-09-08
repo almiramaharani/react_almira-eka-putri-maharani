@@ -8,17 +8,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 export default function ListProduct() {
     const [tableData, setTableData] = useState([]);
     const [searchInput, setSeachInput] = useState('');
-    const [searchRes, setSearchRes] = useState([]);
-
+    
     const handleFormSubmit = (formData) => {
         setTableData([...tableData, formData]);
     }
 
     const handleSearch = () => {
         const result = tableData.find(data => data.productName === searchInput);
-
-        setSearchRes(result);
-        alert(JSON.stringify(result ? searchRes : "Product not found", null, 2));
+        alert(JSON.stringify(result ? result : "Product not found", null, 2));
         setSeachInput('');
     }
 

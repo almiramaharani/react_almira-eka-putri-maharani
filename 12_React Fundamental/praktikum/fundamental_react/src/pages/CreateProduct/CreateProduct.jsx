@@ -61,6 +61,13 @@ export default function CreateProduct ({ onSubmit }) {
             addDesc: '',
             price: ''
         });
+        document.getElementById('image').value = '';
+        const radioElements = document.getElementsByName('productFreshnessRadio');
+        radioElements.forEach((radio) => {
+        if (radio.checked) {
+            radio.checked = false; 
+        }
+        });
         setIsFormValid(false);
     };
 
@@ -97,7 +104,6 @@ export default function CreateProduct ({ onSubmit }) {
                                     name="category" 
                                     id="category" 
                                     className='form-select' 
-                                    defaultValue="" 
                                     value={formData.category}
                                     onChange={handleInputChange}
                                     onBlur={validateForm}
