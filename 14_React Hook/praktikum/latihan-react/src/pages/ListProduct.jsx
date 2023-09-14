@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import CreateProduct from "./CreateProduct";
 import "./ListProduct.css";
-import Modal from 'react-bootstrap/Modal';
+import EditFormModal from './EditFormModal';
 
 
 // Bootstrap CSS
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const ProductTable = ({ tableData, deleteProduct }) => {
-    console.log(tableData);
+const ProductTable = ({ tableData, deleteProduct, handleEdit }) => {
     return (
         <>
             <div className='content-main text-center'>
@@ -36,7 +35,7 @@ const ProductTable = ({ tableData, deleteProduct }) => {
                                     <td>
                                         <div className='column'>
                                             <button id='delete-btn' className='me-2' onClick={() => {deleteProduct(data.numberProduct)}}>Delete</button>
-                                            <button id='edit-btn'>
+                                            <button id='edit-btn' onClick={() => {handleEdit(data.numberProduct)}}>
                                                 Edit
                                             </button>
                                         </div>
@@ -54,6 +53,8 @@ const ProductTable = ({ tableData, deleteProduct }) => {
 function ListProduct () {
     const [dataTable, setDataTable] = useState([]);
     const [searchInput, setSearchInput] = useState('');
+    const [isEditing, setIsEditing] = useState(false);
+    const [editedProduct, setEditedProduct] = useState(null);
     
 
     const addProductToTable = (product) => {
@@ -83,10 +84,30 @@ function ListProduct () {
         setDataTable(updatedTable);
     }
 
+    const handleEdit = (numberProduct) => {
+        const productToEdit = dataTable.find(product => product.numberProduct === numberProduct);
+        setEditedProduct(productToEdit);
+        setIsEditing(true);
+    }
+
+    const handleEditClose = () => {
+        setIsEditing(false);
+        setEditedProduct(null);
+    }
+
+    const handleUpdateProduct = (updatedProduct) => {
+        const updatedTable = dataTable.map(product => 
+          product.numberProduct === updatedProduct.numberProduct ? updatedProduct : product
+        );
+        setDataTable(updatedTable);
+        setIsEditing(false);
+        setEditedProduct(null);
+    }
+
     return (
         <>
             <CreateProduct addProductToTable={addProductToTable} />
-            <ProductTable tableData={dataTable} deleteProduct={handleDelete}/>
+            <ProductTable tableData={dataTable} deleteProduct={handleDelete} handleEdit={handleEdit}/>
             <div className='row mt-4 ms-2'>
                 <div className='form-outline col-4 mb-2'>
                     <input 
@@ -108,6 +129,13 @@ function ListProduct () {
                         >Search</button>
                 </div>
             </div>
+            <EditFormModal
+                show={isEditing}
+                product={editedProduct}
+                handleClose={handleEditClose}
+                handleUpdateProduct={handleUpdateProduct}
+            />
+
         </>
     )
     
