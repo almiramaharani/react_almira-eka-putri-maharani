@@ -102,6 +102,7 @@ function ListProduct () {
         setDataTable(updatedTable);
         setIsEditing(false);
         setEditedProduct(null);
+        alert("Successfully edit the product");
     }
 
     return (
