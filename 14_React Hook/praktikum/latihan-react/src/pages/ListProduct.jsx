@@ -82,6 +82,7 @@ function ListProduct () {
         const updatedTable = dataTable.filter((product) => product.numberProduct !== numberProduct);
 
         setDataTable(updatedTable);
+        alert("Successfully delete a product");
     }
 
     const handleEdit = (numberProduct) => {
