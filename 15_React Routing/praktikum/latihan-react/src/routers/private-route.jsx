@@ -1,5 +1,4 @@
 import React from 'react';
-import auth from '../utils/auth';
 import { Outlet, useNavigate } from 'react-router-dom';
 
 export default function PrivateRoute() {
