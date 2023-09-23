@@ -43,7 +43,7 @@ const ProductTable = ({ tableData, deleteProduct, handleEdit }) => {
                                     <td>
                                         <div className='column'>
                                             <button id='delete-btn' className='me-2' onClick={() => {deleteProduct(data.numberProduct)}}>Delete</button>
-                                            <button id='edit-btn' onClick={() => {handleEdit(data.numberProduct)}}>
+                                            <button id='edit-btn' className='me-2' onClick={() => {handleEdit(data.numberProduct)}}>
                                                 Edit
                                             </button>
                                             <button id='detail-btn' onClick={() => {handleDetailProduct(data)}}>
