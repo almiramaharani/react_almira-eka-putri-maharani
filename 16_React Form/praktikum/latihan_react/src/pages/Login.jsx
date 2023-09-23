@@ -29,6 +29,7 @@ export default function Login() {
             } else if (!emailRegex.test(value)) {
                 setEmailError('Invalid email address');
             } else {
+                setEmail(value);
                 setEmailError("");
             }
         }
@@ -39,6 +40,7 @@ export default function Login() {
             } else if (value.length < 8) {
                 setPasswordError('Password must be at least 8 characters');
             } else {
+                setPassword(value);
                 setPasswordError('');
             }
         }
