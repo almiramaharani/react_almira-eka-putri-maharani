@@ -1,0 +1,13 @@
+.nav-btn {
+    transition: all 0.3s;
+    color: black;
+    text-decoration: none;
+}
+
+.nav-btn:hover {
+    font-weight: bold;
+    color: black;
+    border-color: black;
+    border-radius: 10%;
+}
+
