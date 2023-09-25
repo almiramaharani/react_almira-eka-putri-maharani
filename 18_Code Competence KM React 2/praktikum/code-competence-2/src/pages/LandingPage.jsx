@@ -1,13 +1,21 @@
 import React from 'react';
 import Rocket from '../assets/Rocket.jpg';
+import Contact from './Contact';
+import { useNavigate } from "react-router-dom";
 
-import './LandingPage.css';
+import './style.css';
 import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import Navbar from '../components/Navbar';
 
  export default function LandingPage() {
-
+    const navigate = useNavigate();
+    const handleClickAbout = () => {
+        navigate('/about-me')
+    }
     return (
         <>
+            <Navbar/>
             {/* Header */}
             <div style={{marginBottom: '6em'}}>
                 <div className='d-md-flex justify-content-center flex-sm-col pt-sm-2'>
@@ -25,7 +33,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
                         </div>
                     </div>
                     <div>
-                        <img src={Rocket} alt="Rocket Image"  />
+                        <img id='rocket' src={Rocket} alt="Rocket Image"  />
                     </div>
                 </div>
             </div>
@@ -38,48 +46,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
                         <p>
                             My name Almira Eka Putri Maharani, but you can call me Almira. I'm an undergraduate student at the Faculty of Computer Science, Universitas Indonesia, majoring in Computer Science. I have an interest in technology industry, especially digital product development.
                         </p>
+                        <button className='btn btn-custom' onClick={handleClickAbout}>More About Me</button>
                     </div>
                 </div>
             </div>
 
-            {/* Contact */}
-            <div id='contact'>
-                <div className='contact-container-bg'>
-                    <div className='d-flex flex-col justify-content-around align-items-center pt-4 ms-3 container-contact'>
-                        <div className='row contact-desc'>
-                            <h2 style={{height: '1em'}} className='mb-4'>Contact Me</h2>
-                            <p>
-                                Whether you have a question, a comment, or just want to chat, you can reach out to me through the contact form on this page.
-                            </p>
-                        </div>
-                        <div className='row pt-5'>
-                            <form action="" id='form-contact'>
-                                <div className='row mb-2'>
-                                    <div className='col-6'>
-                                        <label htmlFor="fname" className='form-label'>First Name</label>
-                                        <input type="text" className='form-control' id='fname' required />
-                                    </div>
-                                    <div className='col-6'>
-                                        <label htmlFor="lname" className='form-label'>Last Name</label>
-                                        <input type="text" className='form-control' id='lname' required />
-                                    </div>
-                                </div>
-                                <div className='mb-2'>
-                                    <label htmlFor="email" className='form-label'>Email Address</label>
-                                    <input type="email" className='form-control' id='email' required />
-                                </div>
-                                <div className='mb-2'>
-                                    <label htmlFor="message" className='form-label'>Your Message</label>
-                                    <textarea name="message" id="message" className='form-control' cols="30" rows="10" required></textarea>
-                                </div>
-                                <div className='d-flex justify-content-center'>
-                                    <button type='submit' className='btn btn-custom mt-4 align-self-center'>Contact me</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <Contact/>
 
             {/* Footer */}
             <div className='footer-container'>

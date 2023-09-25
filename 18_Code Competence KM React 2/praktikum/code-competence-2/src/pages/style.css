@@ -63,10 +63,14 @@
     100% { transform: rotate( 0.0deg) }
 }
 
-img {
+img#rocket {
     width: 35em;
     height: 25em;
-    /* margin-left: 200px; */
+}
+
+img#avatar {
+    width: 25em;
+    height: 25em;
 }
 
 #address {

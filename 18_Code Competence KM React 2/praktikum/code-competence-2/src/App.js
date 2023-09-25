@@ -1,12 +1,8 @@
-import Navbar from "./components/Navbar";
-import LandingPage from './pages/LandingPage';
+import Routers from "./routers";
 
 function App() {
   return (
-    <div className="App">
-      <Navbar/>
-      <LandingPage/>
-    </div>
+    <Routers/>
   );
 }
 
