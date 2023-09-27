@@ -18,16 +18,12 @@ export default function AboutMe() {
                             <div>
                                 <h2 className='pb-2'>So, who am I?</h2>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor <br/>incididunt ut labore 
-                                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud <br/> exercitation ullamco laboris nisi ut 
-                                    aliquip ex ea commodo consequat. Duis aute irure dolor in <br/> reprehenderit in voluptate velit esse cillum 
-                                    dolore eu fugiat nulla pariatur.
+                                    My name Almira Eka Putri Maharani, but you can call me Almira. I'm an undergraduate student at the <br/>
+                                    Faculty of Computer Science, Universitas Indonesia, majoring in Computer Science. 
                                 </p>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor <br/>incididunt ut labore 
-                                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud <br/> exercitation ullamco laboris nisi ut 
-                                    aliquip ex ea commodo consequat. Duis aute irure dolor in <br/> reprehenderit in voluptate velit esse cillum 
-                                    dolore eu fugiat nulla pariatur.
+                                    I have an interest in technology industry, especially digital product development.These days, I 
+                                    spent my days with <br/> designing, prototyping, and also developing some projects. 
                                 </p>
                             </div>
                         </div>
