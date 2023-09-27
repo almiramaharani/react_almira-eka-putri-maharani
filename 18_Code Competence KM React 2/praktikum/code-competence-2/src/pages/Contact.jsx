@@ -119,7 +119,7 @@ export default function Contact() {
                                         required></textarea>
                                 </div>
                                 <div className='d-flex justify-content-center'>
-                                    <button type='submit' className='btn btn-custom mt-4 align-self-center' onClick={handleContact}>Contact me</button>
+                                    <button type='submit' className='btn-custom mt-4 align-self-center' onClick={handleContact}>Contact me</button>
                                 </div>
                             </form>
                         </div>

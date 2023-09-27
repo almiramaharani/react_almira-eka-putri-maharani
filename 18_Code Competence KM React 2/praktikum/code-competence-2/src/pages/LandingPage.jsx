@@ -3,10 +3,10 @@ import Rocket from '../assets/Rocket.jpg';
 import Contact from './Contact';
 import { useNavigate } from "react-router-dom";
 
-import './style.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Navbar from '../components/Navbar';
+import './style.css';
 
  export default function LandingPage() {
     const navigate = useNavigate();
@@ -46,7 +46,7 @@ import Navbar from '../components/Navbar';
                         <p>
                             My name Almira Eka Putri Maharani, but you can call me Almira. I'm an undergraduate student at the Faculty of Computer Science, Universitas Indonesia, majoring in Computer Science. I have an interest in technology industry, especially digital product development.
                         </p>
-                        <button className='btn btn-custom' onClick={handleClickAbout}>More About Me</button>
+                        <button className='btn-custom' onClick={handleClickAbout}>More About Me</button>
                     </div>
                 </div>
             </div>

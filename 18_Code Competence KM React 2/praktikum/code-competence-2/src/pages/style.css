@@ -1,14 +1,16 @@
-.btn-custom {
-    background-color: #E6CAF2;
-    color: black;
-    font-weight: bold;
-    transition: all 0.3s;
-}
-
 .btn-custom:hover {
     background-color: #7C77B0;
     color: white;
     border-color: #534f7e;
+}
+
+.btn-custom {
+    background-color: #E6CAF2;
+    color: black;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 5px 10px;
+    transition: all 0.3s;
 }
 
 .bi {
@@ -23,6 +25,11 @@
 .contact-container-bg {
     background-image: linear-gradient(white,#7C77B0);
     padding: 4em 0;
+}
+
+.about-container-bg {
+    background-image: linear-gradient(#7C77B0, white);
+    padding-top: 2em;
 }
 
 .contact-desc {

@@ -30,7 +30,7 @@ export default function Navbar() {
                                 </Link>
                             </li>
                             <li className="nav-item me-5">
-                                <Link to='#contact'>
+                                <Link to='/'>
                                     <button type="button" className="btn btn-link nav-btn">Contact</button>
                                 </Link>
                             </li>
