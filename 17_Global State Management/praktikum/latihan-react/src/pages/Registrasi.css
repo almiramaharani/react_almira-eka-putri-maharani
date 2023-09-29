@@ -9,3 +9,7 @@
     width: 40%;
     text-align: left;
 }
+
+.error-message{
+    color: red;
+}
