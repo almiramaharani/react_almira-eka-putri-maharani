@@ -55,34 +55,34 @@ function CreateProduct (props) {
             
             props.addProductToTable(newProduct);
 
+            setData({
+                ...data,
+                numberProduct: null,
+                productName: '',
+                category: '',
+                image: '',
+                productFreshnessRadio: '',
+                addDesc: '',
+                price: '',
+                isFormValid: false,
+                errorField: {
+                    productName: true,
+                    price: true,
+                },
+            });
+            
+            document.getElementById('image').value = '';
+            const radioElements = document.getElementsByName('productFreshnessRadio');
+            radioElements.forEach((radio) => {
+                if (radio.checked) {
+                    radio.checked = false; 
+                }
+            });
             alert("Successfully added new product");
 
         } else {
             alert("Failed to add new product, please fill out all the fields");
         }
-        setData({
-            ...data,
-            numberProduct: null,
-            productName: '',
-            category: '',
-            image: '',
-            productFreshnessRadio: '',
-            addDesc: '',
-            price: '',
-            isFormValid: false,
-            errorField: {
-                productName: true,
-                price: true,
-            },
-        });
-        
-        document.getElementById('image').value = '';
-        const radioElements = document.getElementsByName('productFreshnessRadio');
-        radioElements.forEach((radio) => {
-            if (radio.checked) {
-                radio.checked = false; 
-            }
-        });
     };
 
     const handleChangeField = (event) => {
