@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { handleDelete } from "../store/productSlice";
+import { handleDelete, selectProduct } from "../store/product-slice";
 
 import CreateProduct from "./CreateProduct";
 import "./ListProduct.css";
@@ -20,7 +20,7 @@ const ProductTable = () => {
         navigate(`/edit-product/${id}`)
     }
 
-    const products = useSelector((state) => state.product.products);
+    const products = useSelector(selectProduct);
     console.log(products);
     const dispatch = useDispatch();
 
@@ -49,11 +49,6 @@ const ProductTable = () => {
                                 <td>{data.productFreshnessRadio}</td>
                                 <td>{data.price}</td>
                                 <td>{data.image}</td>
-                                {/* <td>
-                                    <span>
-                                    {data.image}
-                                    </span>
-                                </td> */}
                                 <td>
                                     <div className='column'>
                                         <button id='delete-btn' className='me-2' onClick={() => {dispatch(handleDelete(data.numberProduct))}}>Delete</button>
@@ -75,7 +70,7 @@ const ProductTable = () => {
 }
 
 function ListProduct () {
-    const products = useSelector((state) => state.product.products);
+    const products = useSelector(selectProduct);
     const [searchInput, setSearchInput] = useState('');
 
     const handleSearch = () => {

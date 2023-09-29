@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { useDispatch } from "react-redux";
-import { addProduct } from "../store/productSlice";
+import { addProduct } from "../store/product-slice";
 import bootstrapLogo from '../assets/bootstrap-logo.svg.png';
 import './CreateProduct.css';
 

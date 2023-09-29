@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch } from 'react-redux';
-import { handleEdit } from "../store/productSlice";
+import { handleEdit } from '../store/product-slice';
 
 import './CreateProduct.css';
 import "bootstrap/dist/css/bootstrap.min.css";

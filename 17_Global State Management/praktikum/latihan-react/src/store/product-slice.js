@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = [
     {
@@ -12,34 +12,27 @@ const initialState = [
     },
 ]
 
-
-export const productSlice = createSlice({
-    name: 'product',
-    initialState: {
-        products: initialState
-    },
+const productSlice = createSlice({
+    name: 'products',
+    initialState,
     reducers: {
         addProduct: (state, action) => {
             const newProduct = {
                 ...action.payload,
             }
-            state.products = [...state.products, newProduct];
-            alert("Successfully add a new product");
+            state.push(newProduct);
         },
         handleDelete: (state, action) => {
-            state.products = state.products.filter((product) => {
-                return product.numberProduct !== action.payload
-            });
-            console.log(state.products)
-            alert("Successfully delete a product");
+            const filteredProduct = state.filter((product) => product.numberProduct !== action.payload);
+            return filteredProduct;
         },
         handleEdit: (state, action) => {
-            const productIndex = state.products.findIndex(
+            const productIndex = state.findIndex(
                 (product) => product.numberProduct === action.payload.numberProduct
             );
 
             if (productIndex !== -1) {
-                const editedProduct = { ...state.products[productIndex] };
+                const editedProduct = { ...state[productIndex] };
 
                 if (action.payload.productName) {
                     editedProduct.productName = action.payload.productName;
@@ -51,12 +44,13 @@ export const productSlice = createSlice({
                     editedProduct.image = action.payload.image;
                 }
 
-                state.products[productIndex] = editedProduct;
+                state[productIndex] = editedProduct;
                 alert("Successfully edited the product");
             }
         }
     }
-})
+});
 
-export const { addProduct, handleDelete, handleEdit } = productSlice.actions;
+export const selectProduct = (state) => state.product;
+export const { addProduct, handleDelete, handleEdit } = productSlice.actions; 
 export default productSlice.reducer;
