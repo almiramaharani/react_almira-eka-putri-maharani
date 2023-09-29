@@ -75,32 +75,32 @@ export default function Registrasi() {
                                 <div className='col pt-3'>
                                     <label htmlFor="fname" className='form-label'>First Name</label>
                                     <Field type="text" name="fname" className='form-control'/>
-                                    <ErrorMessage name='fname' component='div'/>
+                                    <ErrorMessage name='fname' component='div' className='error-message'/>
                                 </div>
                                 <div className='col pt-3'>
                                     <label htmlFor="lname" className='form-label'>Last Name</label>
                                     <Field type="text" name="lname" className='form-control'/>
-                                    <ErrorMessage name='lname' component='div'/>
+                                    <ErrorMessage name='lname' component='div' className='error-message'/>
                                 </div>
                                 <div className='col pt-3'>
                                     <label htmlFor="username" className='form-label'>Username</label>
                                     <Field type="text" name="username" className='form-control'/>
-                                    <ErrorMessage name='username' component='div'/>
+                                    <ErrorMessage name='username' component='div' className='error-message'/>
                                 </div>
                                 <div className='col pt-3'>
                                     <label htmlFor="email" className='form-label'>Email</label>
                                     <Field type="email" name="email" className='form-control'/>
-                                    <ErrorMessage name='email' component='div'/>
+                                    <ErrorMessage name='email' component='div' className='error-message'/>
                                 </div>
                                 <div className='col pt-3'>
                                     <label htmlFor="password" className='form-label'>Password</label>
                                     <Field type="password" name="password" className='form-control'/>
-                                    <ErrorMessage name='password' component='div'/>
+                                    <ErrorMessage name='password' component='div' className='error-message'/>
                                 </div>
                                 <div className='col pt-3'>
                                     <label htmlFor="confirmPassword" className='form-label'>Confirm Password</label>
                                     <Field type="password" name="confirmPassword" className='form-control'/>
-                                    <ErrorMessage name='confirmPassword' component='div'/>
+                                    <ErrorMessage name='confirmPassword' component='div' className='error-message'/>
                                 </div>
                                 <button type='submit' disabled={isSubmitting} className='btn btn-primary mt-3'>Register</button>
                             </Form>
