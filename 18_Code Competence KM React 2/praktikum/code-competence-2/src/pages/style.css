@@ -1,0 +1,151 @@
+.btn-custom:hover {
+    background-color: #7C77B0;
+    color: white;
+    border-color: #534f7e;
+}
+
+.btn-custom {
+    background-color: #E6CAF2;
+    color: black;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 5px 10px;
+    transition: all 0.3s;
+}
+
+.bi {
+    transition: all 0.2s;
+}
+
+.bi:hover {
+    width: 30px;
+    height: 30px;
+}
+
+.contact-container-bg {
+    background-image: linear-gradient(white,#7C77B0);
+    padding: 4em 0;
+}
+
+.about-container-bg {
+    background-image: linear-gradient(#7C77B0, white);
+    padding-top: 2em;
+}
+
+.contact-desc {
+    width: 30%;
+}
+
+
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1em 6em;
+    background-color: #534f7e;
+}
+
+.custom-tooltip {
+    --bs-tooltip-bg: white;
+    --bs-tooltip-color: black;
+}
+
+.wave {
+    animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+    animation-duration: 2.5s;        /* Change to speed up or slow down */
+    animation-iteration-count: infinite;  /* Never stop waving :) */
+    transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+    display: inline-block;
+    font-size: 3.5em;
+}
+  
+@keyframes wave-animation {
+    0% { transform: rotate( 0.0deg) }
+    10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+    20% { transform: rotate(-8.0deg) }
+    30% { transform: rotate(14.0deg) }
+    40% { transform: rotate(-4.0deg) }
+    50% { transform: rotate(10.0deg) }
+    60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+    100% { transform: rotate( 0.0deg) }
+}
+
+img#rocket {
+    width: 35em;
+    height: 25em;
+}
+
+img#avatar {
+    width: 25em;
+    height: 25em;
+}
+
+#address {
+    width: 50%;
+}
+#phone-number {
+    width: 50%;
+}
+
+@media (max-width: 768px) {
+    .tenor-gif-embed {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .greet-container {
+        text-align: center;
+    }
+    .header-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding-top: 3em;
+    }
+    .container-contact {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .contact-desc {
+        width: 80%;
+    }
+
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .web-container {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10%;
+    }
+    .location-container {
+        align-self: center;
+    }
+    .location-icon {
+        padding-top: 0px !important;
+    }
+
+    #address {
+        width: 100%;
+    }
+    #phone-number {
+        width: 100%;
+    }
+
+    img {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50%;
+        height: 30%;
+    }
+
+}
