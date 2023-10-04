@@ -4,10 +4,10 @@ import persistStore from "redux-persist/lib/persistStore";
 import persistReducer from "redux-persist/lib/persistReducer";
 import storage from "redux-persist/lib/storage";
 
-import product from './productSlice';
+import products from './getProductSlice';
 
 const rootReducers = combineReducers({
-    product,
+    products,
 });
 
 const persistConfig = {

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { selectProduct, fetchGetProducts } from "../store/productSlice";
+import { selectProduct, fetchGetProducts } from "../store/getProductSlice";
+import { deleteProduct } from '../store/deleteProductSlice';
 
 import CreateProduct from "./CreateProduct";
 import "./ListProduct.css";
@@ -27,6 +28,13 @@ const ProductTable = () => {
     const handleEditProduct = (id) => {
         navigate(`/edit-product/${id}`)
     }
+
+    const handleDeleteProduct = (id) => {
+        dispatch(deleteProduct(id))
+            .then(() => {
+                dispatch(fetchGetProducts());
+            })
+    };
 
 
     return (
@@ -57,7 +65,7 @@ const ProductTable = () => {
                                 <td>
                                     <div className='column'>
                                         <button id='delete-btn' className='me-2' 
-                                            // onClick={() => {dispatch(handleDelete(data.id))}}
+                                            onClick={() => {handleDeleteProduct(data.id)}}
                                             >Delete</button>
                                         <button id='edit-btn' className='me-2' onClick={() => {handleEditProduct(data.id)}}>
                                             Edit

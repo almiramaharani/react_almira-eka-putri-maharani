@@ -1,8 +1,10 @@
-import React, { useRef } from "react";
+import React from "react";
 import { useDispatch } from 'react-redux';
-import { addProduct } from "../store/productSlice";
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+
+import { addProduct } from "../store/postProductSlice";
+import {fetchGetProducts } from "../store/getProductSlice";
 
 import bootstrapLogo from '../assets/bootstrap-logo.svg.png';
 import './CreateProduct.css';
@@ -38,7 +40,10 @@ export default function CreateProduct() {
             price: values.price,
         };
 
-        dispatch(addProduct(newProduct));
+        dispatch(addProduct(newProduct))
+            .then(() => {
+                dispatch(fetchGetProducts());
+            })
 
         alert("Successfully added new product");
         resetForm();
@@ -191,7 +196,7 @@ export default function CreateProduct() {
                             <div className="error-message">{formik.errors.freshness}</div>
                         )}
                     </div>
-                    
+
                     <div className="col pt-3">
                         <label htmlFor="addDesc" className="form-label">Additional Description</label>
                         <textarea

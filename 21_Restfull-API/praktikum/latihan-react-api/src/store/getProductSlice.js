@@ -6,6 +6,11 @@ export const fetchGetProducts = createAsyncThunk(
     APIProducts.getProducts
 );
 
+export const editProduct = createAsyncThunk(
+    'products/editProduct',
+    APIProducts.editProduct
+)
+
 const initialStateProduct = {
 	message: "",
 	status: "idle",
@@ -30,19 +35,18 @@ const productsSlice = createSlice({
 		builder.addCase(fetchGetProducts.rejected, (state, { error }) => {
             state.status = "failed";
 			state.message = error.stack;
-		});
+		});       
+
+        builder.addCase(editProduct.fulfilled, (state, { payload }) => {
+            const productIndex = state.data.findIndex((product) => product.id === payload.id);
+            if (productIndex !== -1) {
+                state.data[productIndex] = payload;
+                state.status = 'success';
+                state.message = 'Product edited successfully';
+            }
+        });
 	},
     reducers: {
-        addProduct: (state, action) => {
-            const newProduct = {
-                ...action.payload,
-            }
-            state.data.push(newProduct);
-        },
-        // handleDelete: (state, action) => {
-        //     const filteredProduct = state.data.filter((product) => product.id !== action.payload);
-        //     return filteredProduct;
-        // },
         handleEdit: (state, action) => {
             const productIndex = state.data.findIndex(
                 (product) => product.id === action.payload.id
@@ -68,6 +72,6 @@ const productsSlice = createSlice({
     }
 });
 
-export const selectProduct = (state) => state.product;
-export const { addProduct, handleEdit } = productsSlice.actions; 
+export const selectProduct = (state) => state.products;
+export const { handleEdit } = productsSlice.actions; 
 export default productsSlice.reducer;
