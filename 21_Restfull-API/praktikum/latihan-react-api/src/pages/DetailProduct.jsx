@@ -1,24 +1,35 @@
-import React from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Badge from 'react-bootstrap/Badge';
 import Button from 'react-bootstrap/Button';
 
-export default function ProductDetailPage() {
+import { detailProduct } from "../store/detailProductSlice";
+import { useDispatch, useSelector } from 'react-redux';
 
-    const location = useLocation();
+
+export default function ProductDetailPage() {
+    const { id } = useParams();
     const navigate = useNavigate();
     const defaultImage = 'https://support.apple.com/library/content/dam/edam/applecare/images/en_US/iphone/iphone-14-pro-max-colors.png';
 
+    const dispatch = useDispatch();
+    const { detailData } = useSelector((state) => state.detail);
+    
+    useEffect(() => {
+        dispatch(detailProduct(id));
+    }, [id, dispatch]);
+
+    console.log(detailData);
+    
     const {
-        id,
         productName,
         category,
         image,
         freshness,
         price,
         addDesc
-    } = location.state;
+    } = detailData;
 
     const handleBack = () => {
         navigate(-1);

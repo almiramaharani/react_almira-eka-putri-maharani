@@ -5,6 +5,7 @@ export const APIProducts = {
     getProducts: async () => {
         try {
             const result = await axiosInstance.get("/products");
+            console.log(result);
             return result.data;
         } catch (err) {
             if (err instanceof AxiosError) throw new AxiosError(err);
@@ -45,6 +46,16 @@ export const APIProducts = {
             });
             console.log(result)
             return result;
+        } catch (err) {
+            if (err instanceof AxiosError) throw new AxiosError(err);
+            throw new Error(err);
+        }
+    },
+
+    detailProduct: async (id) => {
+        try {
+            const result = await axiosInstance.get(`/products/${id}`);
+            return result.data;
         } catch (err) {
             if (err instanceof AxiosError) throw new AxiosError(err);
             throw new Error(err);

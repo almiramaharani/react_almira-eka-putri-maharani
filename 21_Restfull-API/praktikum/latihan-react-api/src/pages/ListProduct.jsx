@@ -11,18 +11,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const ProductTable = () => {
     const navigate = useNavigate();
     const products = useSelector(selectProduct).data;
-    console.log(useSelector(selectProduct));
+    console.log(products);
     const dispatch = useDispatch();
     
     useEffect(() => {
         dispatch(fetchGetProducts());
     }, [dispatch]);
 
-    const handleDetailProduct = (data) => {
-        console.log(data);
-        navigate(`/product/${data.id}`,
-                    {state: data}
-        )
+    const handleDetailProduct = (id) => {
+        navigate(`/product/${id}`)
     }
 
     const handleEditProduct = (id) => {
@@ -70,7 +67,7 @@ const ProductTable = () => {
                                         <button id='edit-btn' className='me-2' onClick={() => {handleEditProduct(data.id)}}>
                                             Edit
                                         </button>
-                                        <button id='detail-btn'  onClick={() => {handleDetailProduct(data)}}>
+                                        <button id='detail-btn'  onClick={() => {handleDetailProduct(data.id)}}>
                                             Detail
                                         </button>
                                     </div>
@@ -87,6 +84,7 @@ const ProductTable = () => {
 function ListProduct () {
     const products = useSelector(selectProduct).data;
     const dispatch = useDispatch();
+
     useEffect(() => {
         dispatch(fetchGetProducts());
     }, [dispatch]);

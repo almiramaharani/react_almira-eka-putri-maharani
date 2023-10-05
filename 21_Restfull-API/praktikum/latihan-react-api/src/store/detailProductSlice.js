@@ -1,39 +1,37 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { APIProducts } from "../apis/APIProduct";
 
-export const fetchGetProducts = createAsyncThunk(
-    'fetch/getProducts',
-    APIProducts.getProducts
-);
+export const detailProduct = createAsyncThunk(
+    'products/detailProduct',
+    APIProducts.detailProduct
+)
 
 const initialStateProduct = {
 	message: "",
 	status: "idle",
-	data: null,
     detailData: null,
 };
 
 const productsSlice = createSlice({
-	name: "products",
+	name: "detail",
 	initialState: initialStateProduct,
     
     extraReducers: (builder) => {
-		builder.addCase(fetchGetProducts.pending, (state) => {
+		builder.addCase(detailProduct.pending, (state) => {
 			state.status = "loading";
 			state.message = "";
 		});
 
-		builder.addCase(fetchGetProducts.fulfilled, (state, { payload }) => {
+		builder.addCase(detailProduct.fulfilled, (state, action) => {
 			state.status = "success";
-			state.data = payload;
+			state.detailData = action.payload;
 		});
 
-		builder.addCase(fetchGetProducts.rejected, (state, { error }) => {
+		builder.addCase(detailProduct.rejected, (state, { error }) => {
             state.status = "failed";
 			state.message = error.stack;
 		});       
 	},
 });
 
-export const selectProduct = (state) => state.products;
 export default productsSlice.reducer;
