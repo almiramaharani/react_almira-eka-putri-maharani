@@ -5,6 +5,7 @@ import { selectProduct, fetchGetProducts } from "../store/getProductSlice";
 import { deleteProduct } from '../store/deleteProductSlice';
 
 import CreateProduct from "./CreateProduct";
+import ProductSearch from './ProductSearch';
 import "./ListProduct.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -15,8 +16,11 @@ const ProductTable = () => {
     const dispatch = useDispatch();
     
     useEffect(() => {
-        dispatch(fetchGetProducts());
-    }, [dispatch, products]);
+        const fetchData = async () => {
+            await dispatch(fetchGetProducts());
+        };
+        fetchData();
+    }, [dispatch]);
 
     const handleDetailProduct = (id) => {
         navigate(`/product/${id}`)
@@ -86,8 +90,12 @@ function ListProduct () {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchGetProducts());
+        const fetchData = async () => {
+            await dispatch(fetchGetProducts());
+        };
+        fetchData();
     }, [dispatch]);
+
     const [searchInput, setSearchInput] = useState('');
 
     const handleSearch = () => {    
@@ -97,6 +105,10 @@ function ListProduct () {
         }
         console.log(products);
         const result = products.find(data => data.productName === searchInput);
+
+        if (result) {
+            const { id, productName, price, image, freshness, category } = result;
+        }
         alert(JSON.stringify(result ? result : "Product not found", null, 2));
         setSearchInput('');
     }
@@ -105,7 +117,7 @@ function ListProduct () {
         <>
             <CreateProduct />
             <ProductTable />
-            <div className='row mt-4 ms-2'>
+            {/* <div className='row mt-4 ms-2'>
                 <div className='form-outline col-4 mb-2'>
                     <input 
                         type="search" 
@@ -125,7 +137,8 @@ function ListProduct () {
                         onClick={handleSearch}
                         >Search</button>
                 </div>
-            </div>
+            </div> */}
+            <ProductSearch/>
         </>
     )
     

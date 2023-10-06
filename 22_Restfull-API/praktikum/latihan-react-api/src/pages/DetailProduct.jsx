@@ -17,7 +17,10 @@ export default function ProductDetailPage() {
     const { detailData } = useSelector((state) => state.detail);
     
     useEffect(() => {
-        dispatch(detailProduct(id));
+        const fetchData = async () => {
+            await dispatch(detailProduct(id));
+        };
+        fetchData();
     }, [id, dispatch]);
 
     console.log(detailData);
