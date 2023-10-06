@@ -16,7 +16,7 @@ const ProductTable = () => {
     
     useEffect(() => {
         dispatch(fetchGetProducts());
-    }, [dispatch]);
+    }, [dispatch, products]);
 
     const handleDetailProduct = (id) => {
         navigate(`/product/${id}`)
