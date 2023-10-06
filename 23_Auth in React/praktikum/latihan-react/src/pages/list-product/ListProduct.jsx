@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { selectProduct, fetchGetProducts } from "../store/getProductSlice";
-import { deleteProduct } from '../store/deleteProductSlice';
+import { selectProduct, fetchGetProducts } from "../../store/getProductSlice";
+import { deleteProduct } from '../../store/deleteProductSlice';
 
-import CreateProduct from "./CreateProduct";
+import CreateProduct from "../create-product/CreateProduct";
+import ProductSearch from '../ProductSearch';
 import "./ListProduct.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -85,7 +86,6 @@ const ProductTable = () => {
 }
 
 function ListProduct () {
-    const products = useSelector(selectProduct).data;
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -95,44 +95,11 @@ function ListProduct () {
         fetchData();
     }, [dispatch]);
 
-    const [searchInput, setSearchInput] = useState('');
-
-    const handleSearch = () => {    
-        if (searchInput === '') {
-            alert("Please enter the keywords you want to search for!");
-            return;
-        }
-        console.log(products);
-        const result = products.find(data => data.productName === searchInput);
-        alert(JSON.stringify(result ? result : "Product not found", null, 2));
-        setSearchInput('');
-    }
-
     return (
         <>
             <CreateProduct />
             <ProductTable />
-            <div className='row mt-4 ms-2'>
-                <div className='form-outline col-4 mb-2'>
-                    <input 
-                        type="search" 
-                        name="search" 
-                        id="search" 
-                        className='form-control' 
-                        placeholder='Search by Product Name'
-                        value={searchInput}
-                        onChange={(e) => setSearchInput(e.target.value)} 
-                    />
-                </div>
-                <div className='col-2 ms-2'>
-                    <button 
-                        type='button' 
-                        className='btn btn-outline-primary' 
-                        id='search-btn'
-                        onClick={handleSearch}
-                        >Search</button>
-                </div>
-            </div>
+            <ProductSearch/>
         </>
     )
     

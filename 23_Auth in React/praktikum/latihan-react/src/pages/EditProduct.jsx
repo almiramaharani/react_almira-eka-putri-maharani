@@ -6,7 +6,7 @@ import { useFormik } from 'formik';
 import { selectProduct } from "../store/getProductSlice";
 import { editProduct } from '../store/editProductSlice';
 
-import './CreateProduct.css';
+import './create-product/CreateProduct.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function EditProduct(){

@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { Link } from "react-router-dom";
-import heroImage from "../assets/hero-img.png";
-import businessMan from "../assets/business-man.png";
+import heroImage from "../../assets/hero-img.png";
+import businessMan from "../../assets/business-man.png";
 import "./LandingPage.css";
-import Header from '../components/Header';
+import Header from '../../components/Header';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 

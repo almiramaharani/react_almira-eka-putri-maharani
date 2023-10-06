@@ -1,11 +1,11 @@
 import React from 'react';
 import { Routes, Route } from "react-router-dom";
-import LandingPage from '../pages/LandingPage';
-import ListProduct from '../pages/ListProduct';
+import LandingPage from '../pages/landing-page/LandingPage';
+import ListProduct from '../pages/list-product/ListProduct';
 import PrivateRoute from './private-route';
-import Login from '../pages/Login';
-import Registrasi from '../pages/Registrasi';
-import ProductDetailPage from '../pages/DetailProduct';
+import Login from '../pages/login/Login';
+import Registrasi from '../pages/register/Registrasi';
+import ProductDetailPage from '../pages/detail-product/DetailProduct';
 import EditProduct from '../pages/EditProduct';
 
 export default function Routers() {
