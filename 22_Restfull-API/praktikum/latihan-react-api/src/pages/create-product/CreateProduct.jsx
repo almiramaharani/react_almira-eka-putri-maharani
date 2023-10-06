@@ -3,13 +3,13 @@ import { useDispatch } from 'react-redux';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
-import { addProduct } from "../store/postProductSlice";
-import {fetchGetProducts } from "../store/getProductSlice";
+import { addProduct } from "../../store/postProductSlice";
+import {fetchGetProducts } from "../../store/getProductSlice";
 
-import bootstrapLogo from '../assets/bootstrap-logo.svg.png';
+import bootstrapLogo from '../../assets/bootstrap-logo.svg.png';
 import './CreateProduct.css';
 import "bootstrap/dist/css/bootstrap.min.css";
-import Greeting from "./Greeting";
+import Greeting from "../Greeting";
 
 function generateRandomNumber() {
     return Math.floor(Math.random() * 10000).toString().padStart(4, '0');

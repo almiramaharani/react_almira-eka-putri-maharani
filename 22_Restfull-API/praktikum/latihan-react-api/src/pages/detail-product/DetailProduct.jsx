@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Badge from 'react-bootstrap/Badge';
 import Button from 'react-bootstrap/Button';
 
-import { detailProduct } from "../store/detailProductSlice";
+import { detailProduct } from "../../store/detailProductSlice";
 import { useDispatch, useSelector } from 'react-redux';
 
 
