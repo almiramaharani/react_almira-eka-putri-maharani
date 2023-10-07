@@ -12,7 +12,10 @@ const ProductTable = () => {
     const products = useSelector(selectProduct).data;
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(fetchGetProducts());
+        const fetchData = async () => {
+            await dispatch(fetchGetProducts());
+        };
+        fetchData();
     }, [dispatch]);
 
     const handleDetailProduct = (data) => {
