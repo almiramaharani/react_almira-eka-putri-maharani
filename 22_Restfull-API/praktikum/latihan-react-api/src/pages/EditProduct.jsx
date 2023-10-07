@@ -46,7 +46,8 @@ export default function EditProduct(){
     }
     return (
         <>
-            <div className="formContainer">
+            <div className="mainContainer">
+                <div className="formContainer">
                     <h3>Edit Product</h3>
                     <form id="product-form" onSubmit={formik.handleSubmit}>
                         <div className="col pt-3">
@@ -95,6 +96,7 @@ export default function EditProduct(){
                         </button>
                     </form>
                 </div>
+            </div>
         </>
     )
 }

@@ -34,7 +34,8 @@ const ProductTable = () => {
         dispatch(deleteProduct(id))
             .then(() => {
                 dispatch(fetchGetProducts());
-            })
+            });
+        alert("Successfully deleted a product");
     };
 
 
