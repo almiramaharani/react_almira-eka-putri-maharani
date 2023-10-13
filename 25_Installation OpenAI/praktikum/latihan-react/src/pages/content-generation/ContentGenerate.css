@@ -1,0 +1,48 @@
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.chatContainer {
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4px;
+}
+
+.chatMessage {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+}
+
+.inputContainer {
+    position: absolute;
+    bottom: 0;
+    width: 60%;
+}
+
+.inputWrapper {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+textarea {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+/* .sendButton {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: #007BFF;
+    cursor: pointer;
+} */
