@@ -10,7 +10,6 @@ const initialStateProduct = {
 	message: "",
 	status: "idle",
 	data: null,
-    detailData: null,
 };
 
 const productsSlice = createSlice({
