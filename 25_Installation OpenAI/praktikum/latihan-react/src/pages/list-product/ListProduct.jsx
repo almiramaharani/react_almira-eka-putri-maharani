@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { selectProduct, fetchGetProducts } from "../../store/getProductSlice";
+import { fetchGetProducts } from "../../store/getProductSlice";
 import { deleteProduct } from '../../store/deleteProductSlice';
 
 import CreateProduct from "../create-product/CreateProduct";
@@ -11,7 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const ProductTable = () => {
     const navigate = useNavigate();
-    const products = useSelector(selectProduct).data;
+    const products = useSelector((state) => state.products.data);
     console.log(products);
     const dispatch = useDispatch();
     

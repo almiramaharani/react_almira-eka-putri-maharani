@@ -16,9 +16,9 @@ export default function ContentGenerate() {
 
     const [input, setInput] = useState('');
     const [messages, setMessages] = useState([
-        { content: 'Halo, deskripsi produk apa yang anda cari?', isUser: false},
+        { content: 'Halo, ada yang bisa saya bantu?', isUser: false},
     ]);
-
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
         
@@ -68,7 +68,7 @@ export default function ContentGenerate() {
                             <textarea 
                                 name="input"
                                 className='form-control' 
-                                placeholder="Masukkan nama atau jenis produk"
+                                placeholder="Masukkan input Anda"
                                 value={input}
                                 onChange={(e) => setInput(e.target.value)}
                             ></textarea>
