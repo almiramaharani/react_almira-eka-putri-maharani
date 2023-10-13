@@ -70,9 +70,15 @@ function LandingPage() {
 
           <div className="col-footer newsletter-container">
               <h3 id="join-footer">Click Here to Add Product</h3>
-              <Link to="/create-product">
-                <button className="btn-start" style={{marginTop: "12px"}}>Add Product</button>
-              </Link>
+              <div className='column'>
+                <Link to="/create-product">
+                    <button className="btn-start" style={{marginTop: "12px"}}>Add Product</button>
+                </Link>
+                <Link to="/content-generate">
+                    <button className="btn-start" style={{marginTop: "12px"}}>Content Generate</button>
+                </Link>
+
+              </div>
           </div>
 
           {/* footer */}

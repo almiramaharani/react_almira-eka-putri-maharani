@@ -4,9 +4,15 @@
     justify-content: center;
     align-items: center;
     padding-top: 50px;
+
+    overflow-y: auto;
 }
 
 .chatContainer {
+    flex: 1;
+    position: relative;
+    padding-bottom: 80px;
+    z-index: 1;
     width: 50%;
     align-items: center;
     justify-content: center;
@@ -20,14 +26,20 @@
 }
 
 .inputContainer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
-    width: 60%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 2;
 }
 
 .inputWrapper {
     display: flex;
     align-items: center;
+    justify-content: center;
     flex: 1;
 }
 
@@ -39,10 +51,27 @@ textarea {
     outline: none;
 }
 
-/* .sendButton {
+.sendButton {
     background: none;
     border: none;
     font-size: 1.5em;
     color: #007BFF;
     cursor: pointer;
-} */
+}
+
+.inputWithIcon {
+    position: relative;
+}
+
+.inputWithIcon textarea {
+    margin-right: 35em; 
+}
+
+.inputWithIcon button {
+    position: absolute;
+    right: 5px; 
+    top: 5px; 
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
