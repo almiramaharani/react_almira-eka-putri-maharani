@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getResponse } from '../../store/responseAISlice';
+import { useNavigate } from 'react-router-dom';
 
 import { Spin } from "antd";
 import ChatBubble from '../../components/bubble-chat/ChatBubble';
@@ -10,8 +11,8 @@ import './ContentGenerate.css';
 
 export default function ContentGenerate() {
     const isLoading = useSelector((state) => state.response.isLoading);
-    const response = useSelector((state) => state.response.data);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const [input, setInput] = useState('');
     const [messages, setMessages] = useState([
@@ -20,7 +21,7 @@ export default function ContentGenerate() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+        
         setMessages((prevMessages) => [
             ...prevMessages,
             {content: input, isUser: true},
@@ -33,14 +34,24 @@ export default function ContentGenerate() {
                 {content: response.payload, isUser: false},
             ]);
         });
-        setInput('');
+        setInput("");
+    };
+
+    const handleBack = () => {
+        navigate('/');
     }
 
 
     return (
         <>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+            <div className='column'>
+                <button style={{marginLeft: '10px', marginTop: '10px'}} onClick={handleBack}>
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <h2 style={{textAlign: 'center'}}>AI Chat</h2>
+            </div>
             <div className="mainContainer">
-                <h2 style={{textAlign: 'center'}}>Product's Description Generate</h2>
                 <div className="chatContainer">
                     <div className='chatMessage'>
                         {messages.map((message, index) => (
@@ -48,23 +59,25 @@ export default function ContentGenerate() {
                             ))}
                     </div>
                     <Spin spinning={isLoading} size="large" tip="Loading..." style={{marginTop: "5px"}}></Spin>
-                    
-                </div>
-                <div className='inputContainer'>
-                    <form>
-                        <div className='inputWrapper'>
+                </div> 
+            </div>
+            <div className='inputContainer'>
+                <form>
+                    <div className='inputWrapper'>
+                        <div className='inputWithIcon'>
                             <textarea 
                                 name="input"
                                 className='form-control' 
                                 placeholder="Masukkan nama atau jenis produk"
+                                value={input}
                                 onChange={(e) => setInput(e.target.value)}
-                                ></textarea>
-                                <button className="sendButton" onClick={handleSubmit}>
-                                    <i class="fa-sharp fa-solid fa-paper-plane-top fa-lg"></i>
-                                </button>
+                            ></textarea>
+                            <button onClick={handleSubmit}>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
         </>
     )
