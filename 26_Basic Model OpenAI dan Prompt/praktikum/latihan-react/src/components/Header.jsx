@@ -1,18 +1,31 @@
+import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { resetProducts } from '../store/features/product/getProductSlice';
+import { resetResponseAI } from '../store/features/openai/responseAISlice';
 // Bootstrap CSS
 import "bootstrap/dist/css/bootstrap.min.css";
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import "./Header.css";
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
 
 export default function Header() {
     const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn') === 'true');
+    const dispatch = useDispatch();
     console.log(isLoggedIn);
 
     const handleLogout = () => {
         localStorage.setItem('isLoggedIn', 'false');
         setIsLoggedIn(false);
     }
+
+    useEffect(() => {
+        return () => {
+            if (!isLoggedIn) {
+                dispatch(resetResponseAI());
+                dispatch(resetProducts());
+            }
+        }
+    }, [isLoggedIn, dispatch]);
 
     return (
         <>

@@ -55,7 +55,7 @@ const ProductTable = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {products.map((data) => (
+                        {products && products.map((data) => (
                             <tr key={data.id}>
                                 <td>{data.id}</td>
                                 <td>{data.productName}</td>

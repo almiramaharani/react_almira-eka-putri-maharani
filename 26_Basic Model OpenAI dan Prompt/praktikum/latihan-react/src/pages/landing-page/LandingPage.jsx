@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { Link } from "react-router-dom";
+
 import heroImage from "../../assets/hero-img.png";
 import businessMan from "../../assets/business-man.png";
 import "./LandingPage.css";
 import Header from '../../components/Header';
-
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function LandingPage() {
@@ -12,8 +12,8 @@ function LandingPage() {
         const isLoggedIn = localStorage.getItem('isLoggedIn');
         if (isLoggedIn === null) {
             localStorage.setItem('isLoggedIn', 'false');
-        }
-    }, []);
+        }        
+    });
 
     return (
         <>

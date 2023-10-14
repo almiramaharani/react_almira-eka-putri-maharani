@@ -5,7 +5,7 @@ export const openAI = {
         try {
             const response = await openai.chat.completions.create({
                 messages: [
-                    { role: 'system', content: "Anda adalah AI yang hanya memberi layanan untuk generate deskripsi produk. Maksimal kalimat deskripsi adalah 2 kalimat."},
+                    { role: 'system', content: "Anda adalah AI yang hanya memberi layanan untuk generate deskripsi produk. Maksimal kalimat deskripsi adalah 3 kalimat."},
                     { role: 'user', content: input}
                 ],
                 model: 'gpt-3.5-turbo',

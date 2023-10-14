@@ -14,7 +14,12 @@ const initialState = {
 const responseSlice = createSlice({
     name: 'response',
     initialState,
-    reducers: {},
+    reducers: {
+        resetResponseAI: (state) => {
+            state.isLoading = false;
+            state.data = null;
+        }
+    },
     extraReducers: (builder) => {
         builder
             .addCase(getResponse.pending, (state) => {
@@ -29,5 +34,5 @@ const responseSlice = createSlice({
             });
     },
 });
-
+export const { resetResponseAI } = responseSlice.actions;
 export default responseSlice.reducer;
