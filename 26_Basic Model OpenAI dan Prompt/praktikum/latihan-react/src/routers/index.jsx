@@ -15,12 +15,12 @@ export default function Routers() {
             <Route path='/' exact element={<LandingPage/>}/>
             <Route path='/login' element={<Login/>}/>
             <Route path='/register' element={<Registrasi/>}/>
-            <Route path='/content-generate' element={<ContentGenerate/>}/>
 
             <Route element={<PrivateRoute/>}>
                 <Route path='/create-product' element={<ListProduct/>}/>
                 <Route path='/product/:id' element={<ProductDetailPage/>}/>
                 <Route path='/edit-product/:id' element={<EditProduct/>}/>
+                <Route path='/content-generate' element={<ContentGenerate/>}/>
             </Route>
         </Routes>
     )
